@@ -28,7 +28,7 @@ function Gemini:load_envs(override)
   local _envs = {}
   _envs.GEMINI_API_KEY = Config.options.providers.gemini.api_key or os.getenv("GEMINI_API_KEY") or ""
   _envs.AUTH = "key=" .. (_envs.GEMINI_API_KEY or " ")
-  _envs.MODEL = "gemini-pro"
+  _envs.MODEL = Config.options.providers.gemini.model or "gemini-pro"
   _envs.GEMINI_API_HOST = Config.options.providers.gemini.api_host
     or os.getenv("GEMINI_API_HOST")
     or "https://generativelanguage.googleapis.com/v1beta"
